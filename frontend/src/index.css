@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+.weather-card {
+  background-image: url('../public/bg.png');
+  background-size: cover;
+  background-position: center;
+}

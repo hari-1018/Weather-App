@@ -58,7 +58,6 @@ const WeatherDetails = () => {
     year: 'numeric',
   });
 
-  // Convert Unix sunset time to readable HH:MM
   const formatSunset = (timestamp) => {
     const date = new Date(timestamp * 1000);
     return date.toLocaleTimeString('en-US', {
@@ -69,7 +68,6 @@ const WeatherDetails = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FAE2BD]/50">
-      {/* Search Bar */}
       <form onSubmit={handleSearch} className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
         <input
           type="text"
@@ -98,7 +96,6 @@ const WeatherDetails = () => {
 
         {!loading && weatherData && (
           <>
-            {/* Left Card */}
             <div className="absolute left-6 top-20 bg-[#FAE2BD] text-[#EFAA82] p-6 rounded-2xl w-64 h-80">
               <div className="text-lg font-semibold text-center">Today</div>
               <div className="flex justify-center items-center my-2 space-x-2">
@@ -118,7 +115,6 @@ const WeatherDetails = () => {
               </div>
             </div>
 
-            {/* Forecast Section */}
             <div className="absolute right-20 top-20 bg-gray-200/60 backdrop-blur-md rounded-2xl p-4 w-[280px]">
               <div className="grid grid-cols-5 gap-2 text-center text-sm text-gray-700">
                 {forecast.slice(0, 5).map((item, index) => (
@@ -140,7 +136,6 @@ const WeatherDetails = () => {
               </div>
             </div>
 
-            {/* Info Section */}
             <div className="absolute right-20 top-[265px] rounded-2xl p-2 w-[280px] text-white font-semibold">
               <div className="text-sm font-semibold">Weather Tips</div>
               <p className="text-xs mt-2">
